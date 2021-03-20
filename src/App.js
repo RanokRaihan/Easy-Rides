@@ -1,24 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import fakeData from './fakeData/fakeData.json';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Login from './components/Login/Login';
+import Destination from './components/Destination/Destination';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='main'>
+        <div className="container">
+          <Header></Header>
+          <Switch>
+            <Route path='/home'>
+              <div class="grid-container">
+                {
+                  fakeData.map(data => <Home fakeData={data}></Home>)
+                }
+              </div>
+            </Route>
+            <Route exact path='/'>
+              <div class="grid-container">
+                {
+                  fakeData.map(data => <Home fakeData={data}></Home>)
+                }
+              </div>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/destination'>
+              <Destination></Destination>
+            </Route>
+          </Switch>
+
+        </div>
+      </div>
+
+    </Router>
+
   );
 }
 
