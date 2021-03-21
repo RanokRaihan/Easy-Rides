@@ -11,7 +11,7 @@ import {
 import Login from './components/Login/Login';
 import Destination from './components/Destination/Destination';
 import { createContext } from 'react';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
 
 //context api

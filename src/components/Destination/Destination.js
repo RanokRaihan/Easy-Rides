@@ -8,7 +8,7 @@ import fakeData from '../../fakeData/fakeData.json';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAlt, faUsers, faUserFriends } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import SimpleMap from '../SimpleMap/SimpleMap';
 
 const Destination = () => {
@@ -46,7 +46,7 @@ const Destination = () => {
                                     <p>1</p>
                                 </div>
                                 <div>
-                                    <p>{data.onePersonFare}</p>
+                                    <p>${data.onePersonFare}</p>
                                 </div>
                             </div>
 
@@ -63,7 +63,7 @@ const Destination = () => {
                                     <p>2</p>
                                 </div>
                                 <div>
-                                    <p>{data.twoPersonFare}</p>
+                                    <p>${data.twoPersonFare}</p>
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@ const Destination = () => {
                                     <p>4</p>
                                 </div>
                                 <div>
-                                    <p>{data.fourPersonFare}</p>
+                                    <p>${data.fourPersonFare}</p>
                                 </div>
                             </div>
 
