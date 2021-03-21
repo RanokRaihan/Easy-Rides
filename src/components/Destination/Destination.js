@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import './Destination.css';
-import fakeData from '../../fakeData/fakeData.json'
+import fakeData from '../../fakeData/fakeData.json';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 //fontawsome
 
@@ -9,6 +10,7 @@ import fakeData from '../../fakeData/fakeData.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserAlt, faUsers, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react/cjs/react.development';
+import SimpleMap from '../SimpleMap/SimpleMap';
 
 const Destination = () => {
     let { id } = useParams();
@@ -87,7 +89,7 @@ const Destination = () => {
 
                 </div>
                 <div className="map">
-
+                    <SimpleMap></SimpleMap>
                 </div>
             </div>
         </div>
