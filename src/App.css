@@ -31,6 +31,12 @@
     display: block;
     margin: 0 auto;
 }
+.text-success {
+    color: lime;
+}
+.text-danger {
+    color: rgb(247, 35, 35);
+}
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

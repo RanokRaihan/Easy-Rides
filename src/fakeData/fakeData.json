@@ -3,32 +3,36 @@
        "id":1,
        "rideName":"Bike",
        "image":"https://i.ibb.co/zmqPmWP/bike.png",
+       "icon":"https://i.ibb.co/YXSDGmx/bike-icon.png",
        "onePersonFare":25,
-       "twoPersonfare":45,
+       "twoPersonFare":45,
        "fourPersonFare":65
     },
     {
        "id":2,
        "rideName":"Car",
        "image":"https://i.ibb.co/vXGpjKp/car.png",
+       "icon":"https://i.ibb.co/Qj5gzyp/car-icon.png",
        "onePersonFare":22,
-       "twoPersonfare":40,
+       "twoPersonFare":40,
        "fourPersonFare":55
     },
     {
        "id":3,
        "rideName":"Bus",
        "image":"https://i.ibb.co/KxhZTH0/bus.png",
+       "icon":"https://i.ibb.co/9rgbyyf/bus-icon.png",
        "onePersonFare":18,
-       "twoPersonfare":35,
+       "twoPersonFare":35,
        "fourPersonFare":60
     },
     {
-       "id":3,
+       "id":4,
        "rideName":"Train",
        "image":"https://i.ibb.co/rwtMLSq/train.png",
+       "icon":"https://i.ibb.co/4sXNgR6/train-icon.png",
        "onePersonFare":15,
-       "twoPersonfare":25,
+       "twoPersonFare":25,
        "fourPersonFare":40
     }
  ]

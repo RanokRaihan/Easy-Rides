@@ -21,11 +21,20 @@ nav {
     display: inline-block;
     padding: 8px 12px;
     font-size: 20px;
+    cursor: pointer;
+}
+.user-name {
+    padding: 8px 12px;
+    font-size: 24px;
+    display: inline-block;
+    font-weight: 700;
+    color: blue;
+    text-transform: uppercase;
 }
 
 .btn-login {
     background: #fc5d14;
-    color: #fff;
+    color: #fff !important;
 }
 
 /* burger icon for nav  */
@@ -39,10 +48,7 @@ nav {
     background: #000;
     border-radius: 8px;
 }
-.nav-link {
-    text-decoration: none;
-    color: #000;
-}
+
 @media only screen and (max-width: 600px) {
     .main-header {
         grid-template-columns: 8fr 4fr;

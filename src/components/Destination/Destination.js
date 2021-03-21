@@ -1,7 +1,26 @@
 import React from 'react';
-import './Destination.css'
+import { useParams } from 'react-router';
+import './Destination.css';
+import fakeData from '../../fakeData/fakeData.json'
+
+//fontawsome
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserAlt, faUsers, faUserFriends } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react/cjs/react.development';
 
 const Destination = () => {
+    let { id } = useParams();
+    console.log(id);
+    const [isSearched, setIsSearched] = useState(false);
+
+    const data = fakeData.find(element => element.id == id)
+
+    const handleSearch = () => {
+        // eslint-disable-next-line no-unused-vars
+        setIsSearched(true);
+    }
     return (
         <div className='destination'>
             <div className="dest-grid">
@@ -11,11 +30,60 @@ const Destination = () => {
                         <input type="text" name='pickFrom' />
                         <label htmlFor="pickTo">Pick To</label>
                         <input type="text" name='pickTo' />
-                        <button class='btn btn-primary btn-center'>search</button>
+                        <button onClick={handleSearch} className='btn btn-primary btn-center'>search</button>
                     </div>
-                    <div className="dest-search-result">
+                    {isSearched &&
+                        <div className="dest-search-result">
+                            <div className='fare-grid'>
+                                <div className="ride-image">
+                                    <img src={data.icon} alt="" />
+                                </div>
+                                <div>
+                                    <FontAwesomeIcon icon={faUserAlt} />
+                                </div>
+                                <div>
+                                    <p>1</p>
+                                </div>
+                                <div>
+                                    <p>{data.onePersonFare}</p>
+                                </div>
+                            </div>
 
-                    </div>
+
+
+                            <div className='fare-grid'>
+                                <div className="ride-image">
+                                    <img src={data.icon} alt="" />
+                                </div>
+                                <div>
+                                    <FontAwesomeIcon icon={faUserFriends} />
+                                </div>
+                                <div>
+                                    <p>2</p>
+                                </div>
+                                <div>
+                                    <p>{data.twoPersonFare}</p>
+                                </div>
+                            </div>
+
+                            <div className='fare-grid'>
+                                <div className="ride-image">
+                                    <img src={data.icon} alt="" />
+                                </div>
+                                <div>
+                                    <FontAwesomeIcon icon={faUsers} />
+                                </div>
+                                <div>
+                                    <p>4</p>
+                                </div>
+                                <div>
+                                    <p>{data.fourPersonFare}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+
 
                 </div>
                 <div className="map">

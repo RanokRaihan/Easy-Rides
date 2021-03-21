@@ -1,17 +1,26 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
+import { useHistory } from 'react-router';
+import { userContext } from '../../App';
 import logo from '../../images/logo.png';
 import './Header.css';
 
 const Header = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [navClass, setNavClass] = useState('nav-hidden');
     const handleNav = () => {
         if (navClass === 'nav-hidden') {
             setNavClass('nav-show')
         }
         else {
-            setNavClass('nav-hidden')
+
         }
+    }
+    const history = useHistory();
+    const handleNavDirection = direction => {
+        history.push(direction);
+        setNavClass('nav-hidden')
     }
     return (
         <div className='main-header'>
@@ -20,13 +29,15 @@ const Header = () => {
             </div>
             <nav className={navClass}>
                 <ul className='nav-items'>
-                    <li> <a className='nav-link' href="/">Home</a> </li>
-                    <li><a className='nav-link' href="/destination">Destination</a></li>
+                    <li onClick={() => handleNavDirection('/')}>Home  </li>
+                    <li onClick={() => handleNavDirection('/destination/1')}>Destination</li>
                     <li>Blog</li>
                     <li>Contact</li>
-                    <button className='btn btn-login'>
-                        <a className='nav-link' href="/login">Login</a>
-                    </button>
+                    {
+                        loggedInUser.isSignedIn ? <span className='user-name'>{loggedInUser.userName}</span> :
+                            <button onClick={() => handleNavDirection('/login')} className='btn btn-login'> Log in</button>
+                    }
+
                 </ul>
             </nav>
             <div className="nav-burger" onClick={handleNav}>

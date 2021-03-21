@@ -3,6 +3,9 @@
     padding: 10px;
     border-radius: 10px;
 }
+body {
+    overflow: scroll;
+}
 .dest-grid {
     display: grid;
     grid-template-columns: 4fr 8fr;
@@ -22,4 +25,39 @@
     background: rgb(236, 236, 236);
     padding: 15px;
     border-radius: 8px;
+}
+
+.dest-search-result {
+    margin-top: 25px;
+}
+
+.fare-grid {
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr 4fr;
+    grid-gap: 5px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background: #fff;
+    text-align: right;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.ride-image {
+    text-align: left;
+}
+.fare-grid img {
+    width: 70%;
+    margin-right: auto;
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    .dest-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
 }
