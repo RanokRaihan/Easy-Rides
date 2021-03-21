@@ -8,7 +8,7 @@ import firebaseConfig from './firebase.config';
 import { useState } from 'react';
 import { userContext } from '../../App';
 import { useContext } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 
 //initialize firebase app
 if (firebase.apps.length === 0) {
